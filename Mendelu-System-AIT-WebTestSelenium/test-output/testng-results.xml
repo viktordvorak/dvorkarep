@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="42020" started-at="2017-12-31T17:52:46Z" finished-at="2017-12-31T17:53:28Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="42020" started-at="2017-12-31T17:52:46Z" finished-at="2017-12-31T17:53:28Z">
+      <class name="cz.dvorak.mendelu.system.ait.webtestselenium.Mendelu.IsMendelu">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:cz.dvorak.mendelu.system.ait.webtestselenium.Mendelu.IsMendelu@4b93596c]" name="setUp" is-config="true" duration-ms="10186" started-at="2017-12-31T18:52:46Z" finished-at="2017-12-31T18:52:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="nactiUvodniStranku()[pri:0, instance:cz.dvorak.mendelu.system.ait.webtestselenium.Mendelu.IsMendelu@4b93596c]" name="nactiUvodniStranku" duration-ms="29031" started-at="2017-12-31T18:52:56Z" finished-at="2017-12-31T18:53:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- nactiUvodniStranku -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:cz.dvorak.mendelu.system.ait.webtestselenium.Mendelu.IsMendelu@4b93596c]" name="tearDown" is-config="true" duration-ms="2565" started-at="2017-12-31T18:53:25Z" finished-at="2017-12-31T18:53:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- cz.dvorak.mendelu.system.ait.webtestselenium.Mendelu.IsMendelu -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
