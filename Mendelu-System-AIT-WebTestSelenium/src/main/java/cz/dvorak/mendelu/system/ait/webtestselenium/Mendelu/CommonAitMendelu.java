@@ -8,7 +8,7 @@ public class CommonAitMendelu extends CommonAit{
 	  
 	  klikniNaOdkazsTextem("Přihlášení do osobní administrativy UIS");
 	  nastavHodnotuInputuDleName("credential_0", "28381");
-	  nastavHodnotuInputuDleName("credential_1", "zko5Zum9");
+	  nastavHodnotuInputuDleName("credential_1", "Gem.5.cec.pyp");
 	  //klikniNaTlačítkoSName("Přihlásit se");
 	  viditelnyElementSXPath("//input[contains(@name, 'login')]").click();
 	  klikniNaOdkazsTextem("Portál studenta");
