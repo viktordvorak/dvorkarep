@@ -35,6 +35,17 @@ public class CommonAitMendelu extends CommonAit{
 	  
 	}
 	
+	protected void projdiNastenku()throws InterruptedException{
+	  klikniNaOdkazsTextem("další");
+	  klikniNaElementDleXpathPoradi("//tr//td[6]//a[contains(@href,'slozka')]", 1);
+		
+		
+	}
+	
+	protected void zpetDoOsobniAdministrativy()throws InterruptedException{
+	  klikniNaElementDleXpath("//a[contains(@title, 'Osobní administrativa')]");
+	}
+	
 	protected void odhlasitSe() throws InterruptedException{
 	  klikniNaElementDleXpath("//a[contains(@title,'Odhlásit se')]");
 	  klikniNaTlačítkoSName("odhlaseni");

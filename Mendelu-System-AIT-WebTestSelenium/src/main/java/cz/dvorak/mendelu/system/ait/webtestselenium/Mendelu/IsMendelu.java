@@ -20,6 +20,8 @@ public class IsMendelu extends CommonAitMendelu{
 	  prejdiNaUrl(baseUrl);
 	  prihlaseni();	
 	  dorucenaPosta();
+	  zpetDoOsobniAdministrativy();
+	  projdiNastenku();
 	  odhlasitSe();
 	  
 	}
@@ -33,8 +35,6 @@ public class IsMendelu extends CommonAitMendelu{
 	public void ukonceniAplikace()throws InterruptedException{
 		odhlasitSe();
 	}
-	
-
 	
 	//@AfterClass
 	public void ukonceni()throws Exception{
