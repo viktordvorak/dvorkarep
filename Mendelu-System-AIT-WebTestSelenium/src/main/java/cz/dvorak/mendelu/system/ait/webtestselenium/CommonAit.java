@@ -49,7 +49,7 @@ public class CommonAit {
   protected static final long TIMEOUT_IN_SECONDS = 60; // hodnota timeoutu pro WebDriverWait pro rozpoznání neočekávaných situací (v "Nová část obce" 10 sekund na uložení nestačilo, zvyšuji na 15)
   protected static final long INVISIBILITY_TIMEOUT_IN_SECONDS = 60; // hodnota timeoutu pro WebDriverWait pro detekci zmizení
   protected static final int SLEEP_IN_MILISECONDS = 500; // hodnota timeoutu pro Thread.sleep (po přihlášení, konecCiselniku, souhlasimSUpozornenimIfExist) a také implicitní čekání (imlicitlyWait)
-  protected static final int MICROSLEEP_IN_MILISECONDS = 15; // hodnota krátkého timeoutu pro Thread.sleep (rozbalení dropdownu)	
+  protected static final int MICROSLEEP_IN_MILISECONDS = 20; // hodnota krátkého timeoutu pro Thread.sleep (rozbalení dropdownu)	
   
   protected WebDriver driver;
   protected String baseUrl;	
@@ -60,7 +60,7 @@ public class CommonAit {
 	
   
   @BeforeMethod
-public void setUp(){
+  public void setUp(){
 	loadPropertiesFromFile();
 	applyParametrs();
 	//basePath = prop.getProperty("path");  
@@ -291,7 +291,10 @@ protected void tearDown() throws Exception {
     }
   }
   
-  
+  protected void makeVisible(WebElement element){
+	String js = "arguments[0].style.height='auto'; arguments[0].style.visibility='visible';";
+	((JavascriptExecutor) driver).executeScript(js, element);
+  }
   
   protected void klikniNaOdkazsTextem(final String text)throws InterruptedException{
 	while(true){
@@ -299,6 +302,8 @@ protected void tearDown() throws Exception {
 		spanek(2000);	  
 		WebElement element=najdiOdkazDleXPath(text);
 		prejdiFokusemNaElement(element);
+		//makeVisible(element);
+		webDriverWait().until(ExpectedConditions.elementToBeClickable(element));
 		element.click();
 		return;
 		
@@ -323,6 +328,18 @@ protected void tearDown() throws Exception {
 	}  
   }
   
+  protected void klikniNaTlacitkoSId(String aId) throws InterruptedException{
+	while(true){
+	  try {
+		WebElement element=webDriverWait().until(ExpectedConditions.presenceOfElementLocated(By.id(aId)));	
+		element.click();
+		return;
+	  } catch (final StaleElementReferenceException e) {
+		osetriStaleElement(e);
+	  }			
+	}  
+  }
+  
   
   protected void zkontrolujTextNaStrance(final String text){
 	try{
@@ -341,8 +358,7 @@ protected void tearDown() throws Exception {
   }
   
   protected void prejdiFokusemNaElement(final WebElement element){
-	try {
-			
+	try {			
 	  ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);			
 	} catch (Exception e) {
 	  e.printStackTrace();

@@ -3,13 +3,14 @@
 <suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="cz.dvorak.mendelu.system.ait.webtestselenium.Mendelu.IsMendelu">
+      <class name="cz.dvorak.mendelu.system.ait.webtestselenium.Mendelu.ObjednavkaJidla">
         <methods>
-          <include name="nactiUvodniStranku"/>
-          <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="vyberSiPolozku"/>
+          <include name="tearDown"/>
+          <include name="smazObjednavku"/>
         </methods>
-      </class> <!-- cz.dvorak.mendelu.system.ait.webtestselenium.Mendelu.IsMendelu -->
+      </class> <!-- cz.dvorak.mendelu.system.ait.webtestselenium.Mendelu.ObjednavkaJidla -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
